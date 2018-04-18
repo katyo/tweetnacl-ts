@@ -1,7 +1,11 @@
 TweetNaCl.ts
 ============
 
-Port of [TweetNaCl.js](https://tweetnacl.js.org) to TypeScript with several API changes for compatibility with Tree-Shacking.
+[![npm version](https://badge.fury.io/js/tweetnacl-ts.svg)](https://badge.fury.io/js/tweetnacl-ts)
+[![npm downloads](https://img.shields.io/npm/dm/tweetnacl-ts.svg)](https://www.npmjs.com/package/tweetnacl-ts)
+[![Build Status](https://travis-ci.org/katyo/tweetnacl-ts.svg?branch=master)](https://travis-ci.org/katyo/tweetnacl-ts)
+
+Port of [TweetNaCl.js](https://tweetnacl.js.org) to **TypeScript** with several API changes for compatibility with Tree-Shacking to help modern JavaScript bundlers like Rollup and Webpack >2.x attain much optimization.
 
 Also includes:
 
@@ -10,7 +14,7 @@ Also includes:
 * [BlakeJS](https://github.com/dcposch/blakejs)
 * [TweetNaCl-SealedBox.js](https://github.com/whs/tweetnacl-sealed-box)
 
-__NOTE: You need `crypto.getRandomValues()` polyfill for browsers which doesn't supported it.__
+__NOTE: May be you need `crypto.getRandomValues()` polyfill for browsers which doesn't supported it.__
 
 Documentation
 =============
@@ -32,7 +36,7 @@ Overview
 --------
 
 Originally this project had been a port of `nacl-fast.js` to TypeScript.
-Now it also includes support of SealedBox.
+Now it also includes support of SealedBox and HMAC-Auth.
 
 Usage
 -----
