@@ -1,5 +1,4 @@
-TweetNaCl.ts
-============
+# TweetNaCl in TypeScript (and ES6)
 
 [![npm version](https://badge.fury.io/js/tweetnacl-ts.svg)](https://badge.fury.io/js/tweetnacl-ts)
 [![npm downloads](https://img.shields.io/npm/dm/tweetnacl-ts.svg)](https://www.npmjs.com/package/tweetnacl-ts)
