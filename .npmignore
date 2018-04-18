@@ -1,3 +1,4 @@
+.npmignore
 test/
 node_modules/
 **/bin/
@@ -6,3 +7,4 @@ testem.json
 *.log*
 test-out.js
 *.tgz
+
