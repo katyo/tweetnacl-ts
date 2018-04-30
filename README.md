@@ -4,7 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/tweetnacl-ts.svg)](https://www.npmjs.com/package/tweetnacl-ts)
 [![Build Status](https://travis-ci.org/katyo/tweetnacl-ts.svg?branch=master)](https://travis-ci.org/katyo/tweetnacl-ts)
 
-Port of [TweetNaCl.js](https://tweetnacl.js.org) to **TypeScript** with several API changes for compatibility with Tree-Shacking to help modern JavaScript bundlers like Rollup and Webpack >2.x attain much optimization.
+Port of [TweetNaCl.js](https://tweetnacl.js.org) to **TypeScript** with several API changes for compatibility with Tree-Shaking to help modern JavaScript bundlers like Rollup and Webpack >2.x attain much optimization.
 
 Also includes:
 
