@@ -22,6 +22,7 @@
     "src/check.ts",
     "src/verify.ts",
     "src/random.ts",
+    "src/validate.ts",
     "src/client/convert.ts",
     "src/client/random.ts",
     "src/server/convert.ts",

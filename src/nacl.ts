@@ -8,6 +8,7 @@
 //
 
 export * from './array';
+export * from './validate';
 export * from './convert';
 export * from './verify';
 export * from './random';
