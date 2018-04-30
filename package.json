@@ -1,6 +1,6 @@
 {
   "name": "tweetnacl-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Port of TweetNaCl cryptographic library to TypeScript (and ES6)",
   "main": "nacl.js",
   "module": "es/nacl.js",
