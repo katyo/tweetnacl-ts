@@ -1,6 +1,6 @@
 {
   "name": "tweetnacl-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Port of TweetNaCl cryptographic library to TypeScript (and ES6)",
   "main": "nacl.js",
   "module": "es/nacl.js",
@@ -63,16 +63,16 @@
   },
   "homepage": "https://github.com/katyo/tweetnacl-ts#readme",
   "devDependencies": {
-    "@types/mocha": "^5.0.0",
-    "@types/node": "^9.4.6",
-    "browserify": "^16.1.1",
-    "mocha": "^5.0.3",
-    "testem": "^2.0.0",
-    "ts-node": "^5.0.1",
-    "tsify": "^3.0.3",
-    "typescript": "^2.8.1"
+    "@types/mocha": "^5",
+    "@types/node": "^8",
+    "browserify": "^16",
+    "mocha": "^5",
+    "testem": "^2",
+    "ts-node": "^7",
+    "tsify": "^4",
+    "typescript": "^3"
   },
   "dependencies": {
-    "tslib": "^1.9.0"
+    "tslib": "^1"
   }
 }
