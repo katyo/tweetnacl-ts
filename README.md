@@ -25,7 +25,7 @@ Documentation
   * [Random bytes generation](#random-bytes-generation)
   * [Constant-time comparison](#constant-time-comparison)
 * [System requirements](#system-requirements)
-* [Development and testing](#development-and-testing)
+* [Testing](#testing)
 
 
 Overview
