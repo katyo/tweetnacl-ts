@@ -1,10 +1,10 @@
-import { ByteArray, NumArray } from './array';
-import { _verify_32 } from './verify';
-import { gf, gf0, gf1, D2, A, D, S, M, X, Y, Z, I } from './core';
-import { _randomBytes } from './random';
-import { set25519, sel25519, inv25519, pack25519, unpack25519, par25519, neq25519 } from './curve25519';
-import { _hash } from './hash';
-import { checkArrayTypes } from './check';
+import { ByteArray, NumArray } from './array.ts';
+import { _verify_32 } from './verify.ts';
+import { gf, gf0, gf1, D2, A, D, S, M, X, Y, Z, I } from './core.ts';
+import { _randomBytes } from './random.ts';
+import { set25519, sel25519, inv25519, pack25519, unpack25519, par25519, neq25519 } from './curve25519.ts';
+import { _hash } from './hash.ts';
+import { checkArrayTypes } from './check.ts';
 
 export const enum SignLength {
     PublicKey = 32, // public key bytes
@@ -215,7 +215,7 @@ function _sign_open(m: ByteArray, sm: ByteArray, n: number, pk: ByteArray): numb
     return mlen;
 }
 
-export function scalarbase(p: ByteArray[], s: ByteArray) {
+export function scalarbase(p: Float64Array[], s: ByteArray) {
     const q = [gf(), gf(), gf(), gf()];
 
     set25519(q[0], X);
@@ -227,7 +227,7 @@ export function scalarbase(p: ByteArray[], s: ByteArray) {
     scalarmult(p, q, s);
 }
 
-export function scalarmult(p: ByteArray[], q: NumArray[], s: ByteArray) {
+export function scalarmult(p: Float64Array[], q: NumArray[], s: ByteArray) {
     let b, i;
 
     set25519(p[0], gf0);

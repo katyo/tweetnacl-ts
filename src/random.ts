@@ -1,5 +1,5 @@
-import { ByteArray } from './array';
-import { _randomBytes } from './server/random';
+import { ByteArray } from './array.ts';
+import { _randomBytes } from './server/random.ts';
 
 export { _randomBytes };
 

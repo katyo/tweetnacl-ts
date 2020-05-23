@@ -1,7 +1,7 @@
-import { ByteArray, NumArray } from './array';
-import { gf, _9, _121665, A, Z, M, S } from './core';
-import { sel25519, inv25519, pack25519, unpack25519 } from './curve25519';
-import { checkArrayTypes } from './check';
+import { ByteArray, NumArray } from './array.ts';
+import { gf, _9, _121665, A, Z, M, S } from './core.ts';
+import { sel25519, inv25519, pack25519, unpack25519 } from './curve25519.ts';
+import { checkArrayTypes } from './check.ts';
 
 export const enum ScalarLength {
     Scalar = 32, // scalar bytes

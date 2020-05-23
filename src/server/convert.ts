@@ -1,32 +1,35 @@
-import { ByteArray } from '../array';
-import { validateBase64, validateHex } from '../validate';
+import { ByteArray } from '../array.ts';
+import { validateBase64, validateHex } from '../validate.ts';
+import * as base64 from "https://denopkg.com/chiefbiiko/base64/mod.ts";
+import { encodeToString, decodeString } from "https://deno.land/std@0.52.0/encoding/hex.ts";
 
-const { prototype: { slice } } = Array;
+//const { prototype: { slice } } = Array;
+
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
 
 export function encodeUTF8(a: ByteArray): string {
-    return Buffer.from(a).toString('utf8');
+    return decoder.decode(a);
 }
 
 export function decodeUTF8(s: string): ByteArray {
-    return ByteArray(slice.call(Buffer.from(s, 'utf8'), 0));
+    return encoder.encode(s);
 }
 
 export function encodeBase64(a: ByteArray): string {
-    return Buffer.from(a).toString('base64');
+    return base64.fromUint8Array(a);
 }
 
 export function decodeBase64(s: string): ByteArray {
     validateBase64(s);
-
-    return ByteArray(slice.call(Buffer.from(s, 'base64'), 0));
+    return base64.toUint8Array(s);
 }
 
 export function encodeHex(a: ByteArray): string {
-    return Buffer.from(a).toString('hex');
+    return encodeToString(a);
 }
 
 export function decodeHex(s: string): ByteArray {
     validateHex(s);
-
-    return ByteArray(slice.call(Buffer.from(s, 'hex'), 0));
+    return decodeString(s);
 }

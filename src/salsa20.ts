@@ -1,4 +1,4 @@
-import { ByteArray } from './array';
+import { ByteArray } from './array.ts';
 
 export function _salsa20(o: ByteArray, p: ByteArray, k: ByteArray, c: ByteArray) {
     const

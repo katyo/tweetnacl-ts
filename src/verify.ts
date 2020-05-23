@@ -1,5 +1,5 @@
-import { ByteArray } from './array';
-import { checkArrayTypes } from './check';
+import { ByteArray } from './array.ts';
+import { checkArrayTypes } from './check.ts';
 
 function vn(x: ByteArray, xi: number, y: ByteArray, yi: number, n: number): number {
     let i, d = 0;

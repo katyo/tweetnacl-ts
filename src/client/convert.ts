@@ -1,5 +1,5 @@
-import { ByteArray } from '../array';
-import { validateBase64, validateHex } from '../validate';
+import { ByteArray } from '../array.ts';
+import { validateBase64, validateHex } from '../validate.ts';
 
 const { fromCharCode } = String;
 

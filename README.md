@@ -1,8 +1,5 @@
-# TweetNaCl in TypeScript (and ES6)
+# TweetNaCl in TypeScript for Deno
 
-[![npm version](https://badge.fury.io/js/tweetnacl-ts.svg)](https://badge.fury.io/js/tweetnacl-ts)
-[![npm downloads](https://img.shields.io/npm/dm/tweetnacl-ts.svg)](https://www.npmjs.com/package/tweetnacl-ts)
-[![Build Status](https://travis-ci.org/katyo/tweetnacl-ts.svg?branch=master)](https://travis-ci.org/katyo/tweetnacl-ts)
 
 Port of [TweetNaCl.js](https://tweetnacl.js.org) to **TypeScript** with several API changes for compatibility with Tree-Shaking to help modern JavaScript bundlers like Rollup and Webpack >2.x attain much optimization.
 
@@ -13,7 +10,7 @@ Also includes:
 * [BlakeJS](https://github.com/dcposch/blakejs)
 * [TweetNaCl-SealedBox.js](https://github.com/whs/tweetnacl-sealed-box)
 
-__NOTE: May be you need `crypto.getRandomValues()` polyfill for browsers which doesn't supported it.__
+__NOTE: Maybe you need `crypto.getRandomValues()` polyfill for browsers that don't support it.__
 
 Documentation
 =============
@@ -369,30 +366,13 @@ of:
 
 Other systems:
 
-* Node.js
+* Deno
 
 
-Development and testing
+Testing
 ------------------------
-
-Install NPM modules needed for development:
-
-    $ npm install
-
-To build js run compilation:
-
-    $ npm run compile
 
 ### Testing
 
-To run tests in Node:
-
-    $ npm run test-node
-
-To run tests in browsers and Node (CI-mode):
-
-    $ npm run test
-
-To run tests in browsers and Node (Dev-mode):
-
-    $ npm run test-dev
+To run tests in Deno:
+`$ deno test mod.ts`

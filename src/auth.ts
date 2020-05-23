@@ -1,5 +1,5 @@
-import { ByteArray } from './array';
-import { hash } from './hash';
+import { ByteArray } from './array.ts';
+import { hash } from './hash.ts';
 
 export const enum AuthLength {
     Auth = 32,

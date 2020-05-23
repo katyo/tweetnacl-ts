@@ -1,14 +1,23 @@
-import { equal } from 'assert';
-import { ByteArray, WordArray, blake2s, blake2s_init, blake2s_update, blake2s_final, decodeUTF8, encodeHex as enc } from '../src/nacl';
+import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import {
+    ByteArray,
+    WordArray,
+    blake2s,
+    blake2s_init,
+    blake2s_update,
+    blake2s_final,
+    decodeUTF8,
+    encodeHex as enc
+} from '../src/nacl.ts';
 
-describe('Blake2S', () => {
-    it('basic', () => {
+Deno.test('Blake2S', () => {
+    Deno.test('basic', () => {
         // From the example computation in the RFC
-        equal(enc(blake2s(decodeUTF8('abc'))), '508c5e8c327c14e2e1a72ba34eeb452f37458b209ed63a294d999b4c86675982');
-        equal(enc(blake2s(ByteArray([97, 98, 99]))), '508c5e8c327c14e2e1a72ba34eeb452f37458b209ed63a294d999b4c86675982');
+        assertEquals(enc(blake2s(decodeUTF8('abc'))), '508c5e8c327c14e2e1a72ba34eeb452f37458b209ed63a294d999b4c86675982');
+        assertEquals(enc(blake2s(ByteArray([97, 98, 99]))), '508c5e8c327c14e2e1a72ba34eeb452f37458b209ed63a294d999b4c86675982');
     })
 
-    it('self test', () => {
+    Deno.test('self test', () => {
         // Grand hash of hash results
         const expectedHash = [
             0x6A, 0x41, 0x1F, 0x08, 0xCE, 0x25, 0xAD, 0xCD,
@@ -41,7 +50,7 @@ describe('Blake2S', () => {
 
         // Compute and compare the hash of hashes
         const finalHash = blake2s_final(ctx);
-        equal(enc(finalHash), enc(ByteArray(expectedHash)));
+        assertEquals(enc(finalHash), enc(ByteArray(expectedHash)));
     })
 
     // Returns a Uint8Array of len bytes

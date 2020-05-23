@@ -2,7 +2,7 @@
 // Adapted from the reference implementation in RFC7693
 // Ported to Javascript by DC - https://github.com/dcposch
 
-import { ByteArray, WordArray } from './array';
+import { ByteArray, WordArray } from './array.ts';
 
 export interface Blake2B {
     b: ByteArray;
@@ -158,7 +158,7 @@ function blake2b_compress(ctx: Blake2B, last: boolean) {
 
     // get little-endian words
     for (i = 0; i < 32; i++) {
-        m[i] = B2B_GET32(ctx.b, 4 * i);
+        m[i] = B2B_GET32(ctx.h, 4 * i);
     }
 
     // twelve rounds of mixing

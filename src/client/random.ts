@@ -1,7 +1,7 @@
 // Initialize PRNG if environment provides CSPRNG.
 // If not, methods calling randombytes will throw.
 
-import { ByteArray } from '../array';
+import { ByteArray } from '../array.ts';
 
 const QUOTE = 1 << 16;
 

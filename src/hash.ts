@@ -1,5 +1,5 @@
-import { ByteArray, IntArray } from './array';
-import { checkArrayTypes } from './check';
+import { ByteArray, IntArray } from './array.ts';
+import { checkArrayTypes } from './check.ts';
 
 export const enum HashLength {
     Hash = 64, // hash bytes

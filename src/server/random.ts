@@ -1,10 +1,7 @@
-import { randomBytes } from 'crypto';
-import { ByteArray } from '../array';
+import { ByteArray } from '../array.ts';
 
 export function _randomBytes(x: ByteArray, n: number) {
-    const v = randomBytes(n);
     for (let i = 0; i < n; i++) {
-        x[i] = v[i];
-        v[i] = 0;
+        x[i] = Math.random();
     }
 }

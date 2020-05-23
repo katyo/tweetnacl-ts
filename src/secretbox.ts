@@ -1,8 +1,8 @@
-import { ByteArray } from './array';
-import { _verify_16 } from './verify';
-import { _stream_xor, _stream } from './salsa20';
-import { poly1305_init, poly1305_update, poly1305_finish } from './poly1305';
-import { checkArrayTypes, checkLengths } from './check';
+import { ByteArray } from './array.ts';
+import { _verify_16 } from './verify.ts';
+import { _stream_xor, _stream } from './salsa20.ts';
+import { poly1305_init, poly1305_update, poly1305_finish } from './poly1305.ts';
+import { checkArrayTypes, checkLengths } from './check.ts';
 
 export const enum SecretBoxLength {
     Key = 32,      // key bytes

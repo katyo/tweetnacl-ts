@@ -1,19 +1,19 @@
-import { equal } from 'assert';
-import { ByteArray, _onetimeauth, encodeBase64 } from '../src/nacl';
-import specVectors from './data/onetimeauth.spec';
+import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import { ByteArray, _onetimeauth, encodeBase64 } from '../src/nacl.ts';
+import specVectors from './data/onetimeauth.spec.ts';
 
-describe('onetimeauth.quick', () => {
-    describe('onetimeauth specified vectors', () => {
+Deno.test('onetimeauth.quick', () => {
+    Deno.test('onetimeauth specified vectors', () => {
         const _out = ByteArray(16);
 
         specVectors.forEach(([m_, k_, out_], i) => {
-            it(`test spec #${i}`, () => {
+            Deno.test(`test spec #${i}`, () => {
                 const m = ByteArray(m_);
                 const k = ByteArray(k_);
                 const out = ByteArray(out_);
 
                 _onetimeauth(_out, 0, m, 0, m.length, k);
-                equal(encodeBase64(_out), encodeBase64(out));
+                assertEquals(encodeBase64(_out), encodeBase64(out));
             });
         });
     });

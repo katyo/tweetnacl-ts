@@ -1,6 +1,6 @@
-import { ByteArray, NumArray } from './array';
-import { _verify_32 } from './verify';
-import { gf, S, M } from './core';
+import { ByteArray, NumArray } from './array.ts';
+import { _verify_32 } from './verify.ts';
+import { gf, S, M } from './core.ts';
 
 export function set25519(r: NumArray, a: NumArray) {
     for (let i = 0; i < 16; i++) r[i] = a[i] | 0;

@@ -1,10 +1,10 @@
-import { ByteArray } from './array';
-import { _0 } from './core';
-import { _randomBytes } from './random';
-import { _hsalsa20, _sigma } from './salsa20';
-import { _scalarMult, _scalarMult_base } from './scalarmult';
-import { secretbox, secretbox_open, SecretBoxLength } from './secretbox';
-import { checkArrayTypes, checkBoxLengths } from './check';
+import { ByteArray } from './array.ts';
+import { _0 } from './core.ts';
+import { _randomBytes } from './random.ts';
+import { _hsalsa20, _sigma } from './salsa20.ts';
+import { _scalarMult, _scalarMult_base } from './scalarmult.ts';
+import { secretbox, secretbox_open, SecretBoxLength } from './secretbox.ts';
+import { checkArrayTypes, checkBoxLengths } from './check.ts';
 
 export const enum BoxLength {
     PublicKey = 32, // public key bytes
@@ -59,7 +59,7 @@ export function box_keyPair_fromSecretKey(secretKey: ByteArray): BoxKeyPair {
     checkArrayTypes(secretKey);
 
     if (secretKey.length !== BoxLength.SecretKey)
-        throw new Error('bad secret key size');
+        throw new Error(`bad secret key size (${secretKey.length}), should be ${BoxLength.SecretKey}`);
 
     const pk = ByteArray(BoxLength.PublicKey);
 

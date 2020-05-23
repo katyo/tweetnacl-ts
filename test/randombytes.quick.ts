@@ -1,18 +1,17 @@
-import { fail } from 'assert';
-import { randomBytes, encodeBase64 } from '../src/nacl';
+import { assert } from "https://deno.land/std/testing/asserts.ts";
+import { randomBytes, encodeBase64 } from '../src/nacl.ts';
 
-describe('randomBytes.quick', () => {
-    describe('randomBytes', () => {
-        it('find collisions', () => {
+Deno.test('randomBytes.quick', () => {
+    Deno.test('randomBytes', () => {
+        Deno.test('find collisions', () => {
             const set: Record<string, boolean> = {};
             let s, i;
 
             for (i = 0; i < 10000; i++) {
                 s = encodeBase64(randomBytes(32));
-                if (set[s]) {
-                    fail('duplicate random sequence!', s);
-                    return;
-                }
+
+                assert(!set[s]);
+                
                 set[s] = true;
             }
         });

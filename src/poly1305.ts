@@ -5,7 +5,7 @@
 * Ported to TypeScript in 2018 by K. <kayo@illumium.org>
 */
 
-import { ByteArray, HalfArray } from './array';
+import { ByteArray, HalfArray } from './array.ts';
 
 export interface Poly1305 {
     buffer: ByteArray;

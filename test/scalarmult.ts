@@ -1,10 +1,10 @@
-import { equal } from 'assert';
-import { ByteArray, scalarMult, scalarMult_base, decodeBase64 as dec, encodeBase64 as enc } from '../src/nacl';
+import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import { ByteArray, scalarMult, scalarMult_base, decodeBase64 as dec, encodeBase64 as enc } from '../src/nacl.ts';
 
-import randomVectors from './data/scalarmult.random';
+import randomVectors from './data/scalarmult.random.ts';
 
-describe('scalarmult', () => {
-    it('scalarMult_base', () => {
+Deno.test('scalarmult', () => {
+    Deno.test('scalarMult_base', () => {
         // This takes takes a bit of time.
         // Similar to https://code.google.com/p/go/source/browse/curve25519/curve25519_tesgo?repo=crypto
 
@@ -19,12 +19,12 @@ describe('scalarmult', () => {
             input = scalarMult_base(input);
         }
 
-        equal(enc(input), enc(golden));
+        assertEquals(enc(input), enc(golden));
     });
 
-    describe('scalarMult and scalarMult_base random test vectors', () => {
+    Deno.test('scalarMult and scalarMult_base random test vectors', () => {
         randomVectors.forEach(([pk1_, sk1_, pk2_, sk2_, out_], i) => {
-            it(`case ${i}`, () => {
+            Deno.test(`case ${i}`, () => {
                 const pk1 = dec(pk1_);
                 const sk1 = dec(sk1_);
                 const pk2 = dec(pk2_);
@@ -32,16 +32,16 @@ describe('scalarmult', () => {
                 const out = dec(out_);
 
                 const jpk1 = scalarMult_base(sk1);
-                equal(enc(jpk1), enc(pk1));
+                assertEquals(enc(jpk1), enc(pk1));
 
                 const jpk2 = scalarMult_base(sk2);
-                equal(enc(jpk2), enc(pk2));
+                assertEquals(enc(jpk2), enc(pk2));
 
                 const jout1 = scalarMult(sk1, pk2);
-                equal(enc(jout1), enc(out));
+                assertEquals(enc(jout1), enc(out));
 
                 const jout2 = scalarMult(sk2, pk1);
-                equal(enc(jout2), enc(out));
+                assertEquals(enc(jout2), enc(out));
             });
         });
     });

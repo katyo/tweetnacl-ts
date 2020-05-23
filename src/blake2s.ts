@@ -2,7 +2,7 @@
 // Adapted from the reference implementation in RFC7693
 // Ported to Javascript by DC - https://github.com/dcposch
 
-import { ByteArray, WordArray } from './array';
+import { ByteArray, WordArray } from './array.ts';
 
 export interface Blake2S {
     h: WordArray; // hash state
@@ -157,7 +157,7 @@ function blake2s_compress(ctx: Blake2S, last: boolean) {
 // Little-endian byte access.
 // Expects a ByteArray and an index
 // Returns the little-endian uint32 at v[i..i+3]
-function B2S_GET32(v: ByteArray, i: number) {
+function B2S_GET32(v: WordArray, i: number) {
     return v[i] ^ (v[i + 1] << 8) ^ (v[i + 2] << 16) ^ (v[i + 3] << 24);
 }
 
