@@ -1,6 +1,6 @@
 import { ByteArray } from './array.ts';
 import { _0 } from './core.ts';
-import { _randomBytes } from './random.ts';
+import { randomBytes } from './random.ts';
 import { _hsalsa20, _sigma } from './salsa20.ts';
 import { _scalarMult, _scalarMult_base } from './scalarmult.ts';
 import { secretbox, secretbox_open, SecretBoxLength } from './secretbox.ts';
@@ -70,7 +70,7 @@ export function box_keyPair_fromSecretKey(secretKey: ByteArray): BoxKeyPair {
 
 // low level
 function _box_keypair(y: ByteArray, x: ByteArray) {
-    _randomBytes(x, 32);
+    x.set(randomBytes(32));
 
     return _scalarMult_base(y, x);
 }
