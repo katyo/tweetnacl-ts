@@ -5,10 +5,10 @@ export const enum HashLength {
     Hash = 64, // hash bytes
 }
 
-export function hash(msg: ByteArray): ByteArray {
+export function hash(msg: ByteArray, len?: number): ByteArray {
     checkArrayTypes(msg);
 
-    const h = ByteArray(HashLength.Hash);
+    const h = ByteArray(len || HashLength.Hash);
 
     _hash(h, msg, msg.length);
 
