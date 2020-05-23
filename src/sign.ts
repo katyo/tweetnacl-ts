@@ -1,7 +1,7 @@
 import { ByteArray, NumArray } from './array.ts';
 import { _verify_32 } from './verify.ts';
 import { gf, gf0, gf1, D2, A, D, S, M, X, Y, Z, I } from './core.ts';
-import { _randomBytes } from './random.ts';
+import { randomBytes } from './random.ts';
 import { set25519, sel25519, inv25519, pack25519, unpack25519, par25519, neq25519 } from './curve25519.ts';
 import { _hash } from './hash.ts';
 import { checkArrayTypes } from './check.ts';
@@ -124,7 +124,7 @@ function _sign_keypair(pk: ByteArray, sk: ByteArray, seeded: boolean): number {
     const p = [gf(), gf(), gf(), gf()];
     let i;
 
-    if (!seeded) _randomBytes(sk, 32);
+    if (!seeded) sk.set(randomBytes(32));
 
     _hash(d, sk, 32);
     d[0] &= 248;
