@@ -10,8 +10,6 @@ Also includes:
 * [BlakeJS](https://github.com/dcposch/blakejs)
 * [TweetNaCl-SealedBox.js](https://github.com/whs/tweetnacl-sealed-box)
 
-__NOTE: Maybe you need `crypto.getRandomValues()` polyfill for browsers that don't support it.__
-
 Documentation
 =============
 
