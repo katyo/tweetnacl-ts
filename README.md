@@ -353,18 +353,7 @@ different lengths, or their contents differ.
 System requirements
 -------------------
 
-TweetNaCl.js supports modern browsers that have a cryptographically secure
-pseudorandom number generator and typed arrays, including the latest versions
-of:
-
-* Chrome
-* Firefox
-* Safari (Mac, iOS)
-* Internet Explorer 11
-
-Other systems:
-
-* Deno
+* [Deno](https://deno.land)
 
 
 Testing
