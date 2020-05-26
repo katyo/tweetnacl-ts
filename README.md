@@ -26,6 +26,7 @@ Documentation
   * [Constant-time comparison](#constant-time-comparison)
 * [System requirements](#system-requirements)
 * [Testing](#testing)
+* [Usage](#usage)
 
 
 Overview
