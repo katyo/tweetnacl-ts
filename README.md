@@ -372,7 +372,17 @@ Other systems:
 Testing
 ------------------------
 
-### Testing
-
 To run tests in Deno:
 `$ deno test mod.ts`
+
+
+Usage
+------------------------
+
+Partial import
+`import {
+  box_keyPair_fromSecretKey
+} from "https://raw.githubusercontent.com/dr-useless/tweetnacl-deno/master/src/nacl.ts";`
+
+Complete import
+`import * as nacl from "https://raw.githubusercontent.com/dr-useless/tweetnacl-deno/master/src/nacl.ts";`
