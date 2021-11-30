@@ -57,7 +57,7 @@
     "blake2b"
   ],
   "author": "K. <kayo@illumium.org>",
-  "license": "UNLICENSED",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/katyo/tweetnacl-ts/issues"
   },
